@@ -1,0 +1,15 @@
+{
+  "name": "dungeon-jev",
+  "version": "1.0.0",
+  "description": "The JEV waveform player — a worksheet quilt of typed game-logic cells; the verdict cell is a superposed distribution over actions; JEV tunes the quilt weights.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "baseline": "node src/run-script.js --weights receipts/weights-old.json --seeds 1,2,3,4,5,6,7,8 --out receipts/baseline-weights.json",
+    "wave": "node src/run-wave.js",
+    "analyze": "node src/analyze.js",
+    "tune": "node src/tune.js",
+    "ab": "node src/ab.js",
+    "results": "node tools/build-results.mjs"
+  }
+}

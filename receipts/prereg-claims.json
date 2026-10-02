@@ -1,0 +1,54 @@
+{
+  "prereg": "preregister@1",
+  "wave": "73-c",
+  "discipline": "dungeon-jev — the JEV waveform player (worksheet quilt; verdict cell = superposed distribution over 5 actions; JEV as weight-tuner)",
+  "sealedBefore": "any model call, any A/B run — the jepa gold standard",
+  "definitions": {
+    "waveTick": "a row of class:'wave' in receipts/waveform.jsonl (JEV seated, probabilities over all 5 actions receipted)",
+    "gap": "p1 - p2, the top-2 action probabilities of the wave, descending-sorted",
+    "sharp": "gap > eps, eps = 0.15 (pre-registered here, before any run)",
+    "flat": "gap <= eps — the collapse is free (cheap local tiebreak rule takes over)",
+    "modelNeeded": "sharp — per the mission law: flat wave => model not needed (local collapse), sharp wave => the model's pick stands",
+    "danger": "the local threat-level cell value (0-3) computed by rules, receipted in the same row",
+    "normalizedEntropy": "Shannon entropy of the 5 action probabilities, divided by log2(5), in [0,1]",
+    "seedsJevStrictlyBetter": "count of seeds 1-8 where the JEV-weights run scores strictly more than the old-weights run (same engine, same seeds, zero model calls both legs)"
+  },
+  "claims": [
+    {
+      "id": "P1",
+      "claim": "JEV-weighted script beats baseline mean score on >=5/8 seeds: after JEV proposes new cell weights from the waveform + score summaries, the script with JEV weights scores strictly better than the script with old weights on at least 5 of seeds 1-8 (fresh runs, zero model calls, identical vendored engine).",
+      "metric": "ab.seedsJevStrictlyBetter",
+      "op": "gte",
+      "threshold": 5,
+      "refusal": "4 or fewer of 8 seeds strictly better => FAIL: the tuner patch is receipted but is NOT adopted as an improvement of the quilt's player-logic."
+    },
+    {
+      "id": "P2",
+      "claim": "<=35% of ticks need the model seat (the wave is flat elsewhere): over all wave ticks, the fraction with sharp waves (gap > eps=0.15) is <= 35%.",
+      "metric": "waveform.modelNeededPct",
+      "op": "lte",
+      "threshold": 35,
+      "refusal": ">35% sharp ticks => the wave is rarely flat in this dungeon; the local-collapse takeover thesis fails here (honest finding, receipted either way).",
+      "vacuousIf": {
+        "metric": "waveform.waveTicks",
+        "op": "lte",
+        "threshold": 5,
+        "note": "fewer than 6 wave ticks cannot ground a fleet-level claim; VACUOUS, never PASS."
+      }
+    },
+    {
+      "id": "P3",
+      "claim": "Waveform entropy correlates with tick danger (sharp where threats near): Spearman rho between normalized wave entropy and the local threat-level cell (0-3), over all wave ticks, is <= -0.40.",
+      "metric": "waveform.spearmanEntropyVsDanger",
+      "op": "lte",
+      "threshold": -0.4,
+      "refusal": "rho > -0.40 => the wave does not sharpen where danger rises; P3 FAIL (the measured rho is receipted either way).",
+      "vacuousIf": {
+        "metric": "waveform.waveTicks",
+        "op": "lte",
+        "threshold": 5,
+        "note": "a correlation over <=5 points is non-discriminating; VACUOUS, never PASS."
+      }
+    }
+  ]
+}

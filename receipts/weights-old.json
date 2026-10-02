@@ -1,0 +1,5 @@
+{
+  "source": "hand-authored baseline (wave 73-c lane c)",
+  "weights": { "wT": 2, "wL": 1, "wC": 1, "wH": 2, "wE": 1, "waitPenalty": 0.25 },
+  "note": "old weights: threat-avoidance and hp-pressure dominant, loot/exit/corridor light. The tuner's job: propose a better point in this 6-dim weight space."
+}
