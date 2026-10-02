@@ -10,6 +10,8 @@
     "analyze": "node src/analyze.js",
     "tune": "node src/tune.js",
     "ab": "node src/ab.js",
+    "v2": "node src/run-v2.mjs",
+    "test": "node --test",
     "results": "node tools/build-results.mjs"
   }
 }

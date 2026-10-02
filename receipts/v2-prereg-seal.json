@@ -1,0 +1,7 @@
+{
+  "tool": "preregister@1",
+  "sealedAt": "2026-10-02T23:10:46.479Z",
+  "claimsHash": "sha256:9bf60d017f364eb761664bf6bbd99c1d6469b0fb901d17b5789d97ff8a451e63",
+  "claimsPath": "v2-prereg-claims.json",
+  "note": "wave 74-a: sealed before any v2 model call and before the hybrid/local runs; patches named by the wave-1 null (83e4856); wave-1 claims untouched beside"
+}

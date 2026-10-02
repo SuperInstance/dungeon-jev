@@ -1,0 +1,57 @@
+{
+  "prereg": "preregister@1",
+  "wave": "74-a",
+  "discipline": "dungeon-jev v2 — the legality mask (wired BEFORE collapse) + the GAP-GATE rerun; patches named by this repo's own JEV-WAVE-1 honest null (83e4856)",
+  "sealedBefore": "any model call of this wave, any v2 run — the jepa gold standard; wave-1 claims (73-c, claimsHash sha256:6b4f803e...) and its receipts are UNTOUCHED history; v2 scores beside them",
+  "instrument": {
+    "engine": "the vendored core src/dungeon.js (byte-frozen, batteryBinding below) — same engine as wave-1",
+    "mask": "the upstream typed legality mask, vendored verbatim from quilt-dungeons@6740b59 (CONTRACT v1.1.0 §6.5) into src/v2-mask.js: a cardinal action is legal iff its target cell is not '#'; wait always legal; a bump is never in the mask; a monster cell IS legal",
+    "localWave": "softmax with SEALED temperature T=1.0 (a priori: one cell-unit of actionScore = e-fold odds; no tuning on claim seeds) over actionScore(game, a, weights-old) for ALL 5 actions on the pre-move state",
+    "maskedWave": "the wave renormalized over the legal mask — masking happens BEFORE any gap computation and BEFORE any collapse (the mission's 'masked top-2 gap')",
+    "eps": 0.15,
+    "gapGate": "THE MODEL SEAT FIRES IFF masked top-2 gap < eps=0.15 (contested). Settled waves (gap >= eps) collapse to the local rule for free. Sealed reading of the mission's law: 'fires ONLY when gap < eps' is load-bearing, and P2's parenthetical ('the mask shrinks contested space') names the contested (gap < eps) rate as the gated quantity; the mission's trailing 'flat waves collapse to the local rule' is therefore read as the settled case. The pre-registered tiebreak (fixed ACTIONS order) lives INSIDE the mask.",
+    "seat": "JEV /v1/systemone, the wave-1 verdict question VERBATIM (same instrument), state = wave-1's worksheet shape + additive mask fields (the seat sees the mask). The model's raw pick = argmax of its unmasked wave (ACTIONS tiebreak); if the raw pick is illegal it is receipted mask-refused and NEVER executed — the executed pick is the masked-collapse argmax.",
+    "consultCaps": { "perSeedAttempts": 1, "seeds": [1, 2, 3, 4, 5, 6, 7, 8], "globalAttemptCap": 12, "note": "every attempt (success or failure) is receipted to receipts/model-calls-v2.jsonl; the lane budget is <=12 receipted typesafe calls; exhausted/blocked seats fall back to the local rule, receipted" },
+    "p3Law": "an action is illegal iff it is not 'wait' and its target is unwalkable; assertLegal runs pre-step in every leg; any violation throws E_MASK_LAW_VIOLATED and invalidates the run"
+  },
+  "batteryBinding": {
+    "src/dungeon.js": "sha256:f0083b3bd573bc945569ed435aaa9278224f3dd9e4e94ec8d96ce56aa2462a7d",
+    "src/players.js": "sha256:011a5837f7172fe8906fe95087641976d2a0eb0d357ad2456177fe12a9118adb",
+    "src/jev.js": "sha256:8427dae89921c0fb32564b703559211bfaaa630022982e45d401d1d96cd98944",
+    "src/v2-mask.js": "sha256:5bdcdb47168c4754fa75924420f4043d315bb1ba85ec7e4dec022722f823ecc8",
+    "src/v2-wave.js": "sha256:5a3d6c32f5a257b4bf0361bf6b2b528c1b932fdb19db1016b0b36950cc142e64",
+    "src/run-v2.mjs": "sha256:7ba9d7664204a940cfe998c19b0b5fdbff9c3bf20344859c2a8e07e62f5052e8"
+  },
+  "claims": [
+    {
+      "id": "P1",
+      "claim": "Masked-gap-gated JEV hybrid >= local-rule mean on >=5/8 seeds (seeds 1-8): on at least 5 of seeds 1-8, the hybrid run's final score is >= the mean final score of the local-rule (weights-old) runs on seeds 1-8 (fresh runs, same engine; the local mean is receipted in the same results file and cross-checked against receipts/ab-results.json meanOld=6.25).",
+      "metric": "v2.seedsHybridGteLocalMean",
+      "op": "gte",
+      "threshold": 5,
+      "refusal": "4 or fewer of 8 seeds >= local-rule mean => FAIL: the masked-gap-gated hybrid is receipted but is NOT adopted over the local rule (honest finding, beside wave-1's 3xFAIL)."
+    },
+    {
+      "id": "P2",
+      "claim": "Model-seat firing rate <= 50% (the mask shrinks contested space): over ALL hybrid ticks (seeds 1-8), the fraction of ticks where the GAP-GATE fires (masked top-2 gap < eps=0.15) is <= 50%. The no-mask counterfactual rate (unmasked top-2 gap < eps over all 5 actions) is receipted beside it as evidence of the shrinkage.",
+      "metric": "v2.gateFiredPct",
+      "op": "lte",
+      "threshold": 50,
+      "vacuousIf": {
+        "metric": "v2.totalTicks",
+        "op": "lte",
+        "threshold": 20,
+        "note": "a firing rate over <=20 hybrid ticks cannot ground a fleet-level claim; VACUOUS, never PASS."
+      },
+      "refusal": ">50% gated ticks => the mask does not shrink the contested space below half; the gap-gate thesis fails here (honest finding, receipted either way)."
+    },
+    {
+      "id": "P3",
+      "claim": "0 illegal actions executed across all runs (the mask law): across every v2 run (hybrid AND local legs, seeds 1-8), no non-wait action with an unwalkable target is ever passed to step(); illegal model picks are receipted mask-refused and never executed; any receipted illegalSeen row or assertLegal breach fails the run and this claim.",
+      "metric": "v2.illegalExecuted",
+      "op": "eq",
+      "threshold": 0,
+      "refusal": "any illegal action executed => the mask law is broken => FAIL (and the run is invalid, receipted E_MASK_LAW_VIOLATED)."
+    }
+  ]
+}
