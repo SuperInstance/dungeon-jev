@@ -1,0 +1,39 @@
+{
+  "tool": "preregister@1",
+  "claimsHash": "sha256:9bf60d017f364eb761664bf6bbd99c1d6469b0fb901d17b5789d97ff8a451e63",
+  "sealedAt": "2026-10-02T23:10:46.479Z",
+  "verdicts": [
+    {
+      "claimId": "P1",
+      "metric": "v2.seedsHybridGteLocalMean",
+      "op": "gte",
+      "threshold": 5,
+      "verdict": "FAIL",
+      "measured": 4,
+      "reason": "4 or fewer of 8 seeds >= local-rule mean => FAIL: the masked-gap-gated hybrid is receipted but is NOT adopted over the local rule (honest finding, beside wave-1's 3xFAIL)."
+    },
+    {
+      "claimId": "P2",
+      "metric": "v2.gateFiredPct",
+      "op": "lte",
+      "threshold": 50,
+      "verdict": "PASS",
+      "measured": 42.30769230769231
+    },
+    {
+      "claimId": "P3",
+      "metric": "v2.illegalExecuted",
+      "op": "eq",
+      "threshold": 0,
+      "verdict": "PASS",
+      "measured": 0
+    }
+  ],
+  "counts": {
+    "PASS": 2,
+    "FAIL": 1,
+    "VACUOUS": 0,
+    "PENDING": 0
+  },
+  "law": "pure function of (claims, seal, results) — the carrying commit is the timestamp; FAIL and VACUOUS are honest receipts, never silenced"
+}

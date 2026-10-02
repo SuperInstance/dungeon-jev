@@ -1,0 +1,100 @@
+{
+  "eps": 0.15,
+  "note": "DESCRIPTIVE ONLY (zero calls, claims untouched): the vendored mask replayed over wave-1's receipted trajectory (receipts/waveform.jsonl, read-only).",
+  "fidelity": true,
+  "waveTicks": 11,
+  "illegalRawPicks": 2,
+  "refusedAll": 2,
+  "contestedUnmasked": 6,
+  "contestedMasked": 4,
+  "perTick": [
+    {
+      "ep": "W1",
+      "tick": 0,
+      "modelPick": "right",
+      "maskRefused": true,
+      "unmaskedGap": 0.09000000000000002,
+      "maskedGap": 0.2653061224489796
+    },
+    {
+      "ep": "W1",
+      "tick": 1,
+      "modelPick": "down",
+      "maskRefused": false,
+      "unmaskedGap": 0.02999999999999997,
+      "maskedGap": 0.309090909090909
+    },
+    {
+      "ep": "W1",
+      "tick": 2,
+      "modelPick": "down",
+      "maskRefused": false,
+      "unmaskedGap": 0.22999999999999998,
+      "maskedGap": 0.2948717948717948
+    },
+    {
+      "ep": "W1",
+      "tick": 3,
+      "modelPick": "down",
+      "maskRefused": false,
+      "unmaskedGap": 0.05000000000000002,
+      "maskedGap": 0.06250000000000006
+    },
+    {
+      "ep": "W1",
+      "tick": 4,
+      "modelPick": "right",
+      "maskRefused": false,
+      "unmaskedGap": 0.42999999999999994,
+      "maskedGap": 0.45263157894736833
+    },
+    {
+      "ep": "W1",
+      "tick": 5,
+      "modelPick": "right",
+      "maskRefused": false,
+      "unmaskedGap": 0.27999999999999997,
+      "maskedGap": 0.27999999999999997
+    },
+    {
+      "ep": "W2",
+      "tick": 0,
+      "modelPick": "right",
+      "maskRefused": false,
+      "unmaskedGap": 0.18999999999999995,
+      "maskedGap": 0.20212765957446804
+    },
+    {
+      "ep": "W2",
+      "tick": 1,
+      "modelPick": "down",
+      "maskRefused": false,
+      "unmaskedGap": 0.04999999999999999,
+      "maskedGap": 0.052083333333333315
+    },
+    {
+      "ep": "W2",
+      "tick": 2,
+      "modelPick": "down",
+      "maskRefused": false,
+      "unmaskedGap": 0.030000000000000027,
+      "maskedGap": 0.03658536585365857
+    },
+    {
+      "ep": "W2",
+      "tick": 3,
+      "modelPick": "right",
+      "maskRefused": true,
+      "unmaskedGap": 0,
+      "maskedGap": 0.053333333333333344
+    },
+    {
+      "ep": "W2",
+      "tick": 4,
+      "modelPick": "right",
+      "maskRefused": false,
+      "unmaskedGap": 0.17,
+      "maskedGap": 0.18478260869565222
+    }
+  ]
+}

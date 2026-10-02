@@ -1,0 +1,270 @@
+{
+  "wave": "74-a",
+  "discipline": "dungeon-jev v2 — legality mask + gap-gate rerun",
+  "eps": 0.15,
+  "softmaxT": 1,
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "dry": false,
+  "caps": {
+    "perSeedAttempts": 1,
+    "globalAttempts": 12
+  },
+  "claimsHash": "sha256:9bf60d017f364eb761664bf6bbd99c1d6469b0fb901d17b5789d97ff8a451e63",
+  "sealedRun": true,
+  "batteryBinding": {
+    "src/dungeon.js": "sha256:f0083b3bd573bc945569ed435aaa9278224f3dd9e4e94ec8d96ce56aa2462a7d",
+    "src/players.js": "sha256:011a5837f7172fe8906fe95087641976d2a0eb0d357ad2456177fe12a9118adb",
+    "src/jev.js": "sha256:8427dae89921c0fb32564b703559211bfaaa630022982e45d401d1d96cd98944",
+    "src/v2-mask.js": "sha256:5bdcdb47168c4754fa75924420f4043d315bb1ba85ec7e4dec022722f823ecc8",
+    "src/v2-wave.js": "sha256:5a3d6c32f5a257b4bf0361bf6b2b528c1b932fdb19db1016b0b36950cc142e64",
+    "src/run-v2.mjs": "sha256:7ba9d7664204a940cfe998c19b0b5fdbff9c3bf20344859c2a8e07e62f5052e8"
+  },
+  "localRuns": [
+    {
+      "seed": 1,
+      "score": 20,
+      "loots": 2,
+      "died": true,
+      "exited": false,
+      "ticks": 38
+    },
+    {
+      "seed": 2,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    },
+    {
+      "seed": 3,
+      "score": 10,
+      "loots": 1,
+      "died": true,
+      "exited": false,
+      "ticks": 30
+    },
+    {
+      "seed": 4,
+      "score": 10,
+      "loots": 1,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    },
+    {
+      "seed": 5,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    },
+    {
+      "seed": 6,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    },
+    {
+      "seed": 7,
+      "score": 0,
+      "loots": 0,
+      "died": true,
+      "exited": false,
+      "ticks": 12
+    },
+    {
+      "seed": 8,
+      "score": 10,
+      "loots": 1,
+      "died": true,
+      "exited": false,
+      "ticks": 20
+    }
+  ],
+  "hybridRuns": [
+    {
+      "seed": 1,
+      "score": 20,
+      "loots": 2,
+      "died": true,
+      "exited": false,
+      "ticks": 38,
+      "gateFiredTicks": 18,
+      "consulted": 0,
+      "maskRefused": 0,
+      "illegalSeen": 0
+    },
+    {
+      "seed": 2,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40,
+      "gateFiredTicks": 36,
+      "consulted": 0,
+      "maskRefused": 0,
+      "illegalSeen": 0
+    },
+    {
+      "seed": 3,
+      "score": 10,
+      "loots": 1,
+      "died": true,
+      "exited": false,
+      "ticks": 30,
+      "gateFiredTicks": 13,
+      "consulted": 0,
+      "maskRefused": 0,
+      "illegalSeen": 0
+    },
+    {
+      "seed": 4,
+      "score": 10,
+      "loots": 1,
+      "died": false,
+      "exited": false,
+      "ticks": 40,
+      "gateFiredTicks": 28,
+      "consulted": 0,
+      "maskRefused": 0,
+      "illegalSeen": 0
+    },
+    {
+      "seed": 5,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40,
+      "gateFiredTicks": 1,
+      "consulted": 0,
+      "maskRefused": 0,
+      "illegalSeen": 0
+    },
+    {
+      "seed": 6,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40,
+      "gateFiredTicks": 4,
+      "consulted": 0,
+      "maskRefused": 0,
+      "illegalSeen": 0
+    },
+    {
+      "seed": 7,
+      "score": 0,
+      "loots": 0,
+      "died": true,
+      "exited": false,
+      "ticks": 12,
+      "gateFiredTicks": 2,
+      "consulted": 0,
+      "maskRefused": 0,
+      "illegalSeen": 0
+    },
+    {
+      "seed": 8,
+      "score": 10,
+      "loots": 1,
+      "died": true,
+      "exited": false,
+      "ticks": 20,
+      "gateFiredTicks": 8,
+      "consulted": 0,
+      "maskRefused": 0,
+      "illegalSeen": 0
+    }
+  ],
+  "localMean": 6.25,
+  "hybridMean": 6.25,
+  "paired": [
+    {
+      "seed": 1,
+      "hybrid": 20,
+      "local": 20,
+      "delta": 0
+    },
+    {
+      "seed": 2,
+      "hybrid": 0,
+      "local": 0,
+      "delta": 0
+    },
+    {
+      "seed": 3,
+      "hybrid": 10,
+      "local": 10,
+      "delta": 0
+    },
+    {
+      "seed": 4,
+      "hybrid": 10,
+      "local": 10,
+      "delta": 0
+    },
+    {
+      "seed": 5,
+      "hybrid": 0,
+      "local": 0,
+      "delta": 0
+    },
+    {
+      "seed": 6,
+      "hybrid": 0,
+      "local": 0,
+      "delta": 0
+    },
+    {
+      "seed": 7,
+      "hybrid": 0,
+      "local": 0,
+      "delta": 0
+    },
+    {
+      "seed": 8,
+      "hybrid": 10,
+      "local": 10,
+      "delta": 0
+    }
+  ],
+  "wins": 0,
+  "ties": 8,
+  "seedsHybridGteLocalMean": 4,
+  "totalTicks": 260,
+  "contestedTicks": 110,
+  "gateFiredPct": 42.30769230769231,
+  "unmaskedContestedPct": 62.30769230769231,
+  "consultedTotal": 0,
+  "attemptsTotal": 0,
+  "receiptedCalls": 0,
+  "maskRefusedTotal": 0,
+  "receiptedMaskRefused": 0,
+  "illegalExecuted": 0,
+  "receiptedIllegal": 0,
+  "abCheck": "match",
+  "jevLedW1W2": {
+    "source": "receipts/waveform-run-summary.json (wave-1, untouched)",
+    "scores": [
+      0,
+      0
+    ]
+  },
+  "wave1ReplayFile": "receipts/v2-wave1-replay.json"
+}

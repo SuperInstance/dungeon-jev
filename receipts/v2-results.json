@@ -1,0 +1,116 @@
+{
+  "metrics": {
+    "v2.seedsHybridGteLocalMean": 4,
+    "v2.gateFiredPct": 42.30769230769231,
+    "v2.totalTicks": 260,
+    "v2.illegalExecuted": 0
+  },
+  "evidence": {
+    "eps": 0.15,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "dry": false,
+    "localMean": 6.25,
+    "hybridMean": 6.25,
+    "paired": [
+      {
+        "seed": 1,
+        "hybrid": 20,
+        "local": 20,
+        "delta": 0
+      },
+      {
+        "seed": 2,
+        "hybrid": 0,
+        "local": 0,
+        "delta": 0
+      },
+      {
+        "seed": 3,
+        "hybrid": 10,
+        "local": 10,
+        "delta": 0
+      },
+      {
+        "seed": 4,
+        "hybrid": 10,
+        "local": 10,
+        "delta": 0
+      },
+      {
+        "seed": 5,
+        "hybrid": 0,
+        "local": 0,
+        "delta": 0
+      },
+      {
+        "seed": 6,
+        "hybrid": 0,
+        "local": 0,
+        "delta": 0
+      },
+      {
+        "seed": 7,
+        "hybrid": 0,
+        "local": 0,
+        "delta": 0
+      },
+      {
+        "seed": 8,
+        "hybrid": 10,
+        "local": 10,
+        "delta": 0
+      }
+    ],
+    "wins": 0,
+    "ties": 8,
+    "consultedTotal": 0,
+    "attemptsTotal": 0,
+    "receiptedCalls": 0,
+    "budgetCap": 12,
+    "maskRefusedTotal": 0,
+    "receiptedMaskRefused": 0,
+    "unmaskedContestedPct": 62.30769230769231,
+    "maskedContestedPct": 42.30769230769231,
+    "contestedShrinkagePp": 20,
+    "jevLedW1W2": {
+      "source": "receipts/waveform-run-summary.json (wave-1, untouched)",
+      "scores": [
+        0,
+        0
+      ]
+    },
+    "wave1Replay": {
+      "file": "receipts/v2-wave1-replay.json",
+      "waveTicks": 11,
+      "illegalRawPicks": 2,
+      "refusedAll": 2,
+      "contestedUnmasked": 6,
+      "contestedMasked": 4,
+      "fidelity": true
+    },
+    "localLegVsAbBaseline": "match",
+    "receipts": {
+      "runs": "receipts/v2-runs.jsonl",
+      "calls": "receipts/model-calls-v2.jsonl",
+      "summary": "receipts/v2-summary.json"
+    },
+    "claimsHash": "sha256:9bf60d017f364eb761664bf6bbd99c1d6469b0fb901d17b5789d97ff8a451e63",
+    "batteryBinding": {
+      "src/dungeon.js": "sha256:f0083b3bd573bc945569ed435aaa9278224f3dd9e4e94ec8d96ce56aa2462a7d",
+      "src/players.js": "sha256:011a5837f7172fe8906fe95087641976d2a0eb0d357ad2456177fe12a9118adb",
+      "src/jev.js": "sha256:8427dae89921c0fb32564b703559211bfaaa630022982e45d401d1d96cd98944",
+      "src/v2-mask.js": "sha256:5bdcdb47168c4754fa75924420f4043d315bb1ba85ec7e4dec022722f823ecc8",
+      "src/v2-wave.js": "sha256:5a3d6c32f5a257b4bf0361bf6b2b528c1b932fdb19db1016b0b36950cc142e64",
+      "src/run-v2.mjs": "sha256:7ba9d7664204a940cfe998c19b0b5fdbff9c3bf20344859c2a8e07e62f5052e8"
+    }
+  }
+}
