@@ -1,0 +1,7 @@
+{
+  "tool": "preregister@1",
+  "sealedAt": "2026-10-02T21:51:04.298Z",
+  "claimsHash": "sha256:6b4f803eaef9d5cf4226da5d6d8d125da9ed93c22124051b9adb7080eb1e6cba",
+  "claimsPath": "prereg-claims.json",
+  "note": "wave-73 lane c: sealed before any model call and before baseline/waveform/A-B runs"
+}
