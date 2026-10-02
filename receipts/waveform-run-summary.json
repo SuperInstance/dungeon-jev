@@ -1,0 +1,50 @@
+{
+  "plan": [
+    {
+      "ep": "W1",
+      "seed": 1,
+      "cap": 6
+    },
+    {
+      "ep": "W2",
+      "seed": 2,
+      "cap": 5
+    }
+  ],
+  "eps": 0.15,
+  "summary": [
+    {
+      "ep": "W1",
+      "seed": 1,
+      "consultCap": 6,
+      "consults": 6,
+      "waveRows": 6,
+      "localRows": 4,
+      "fallbacks": 0,
+      "score": 0,
+      "loots": 0,
+      "died": true,
+      "exited": false,
+      "ticks": 10
+    },
+    {
+      "ep": "W2",
+      "seed": 2,
+      "consultCap": 5,
+      "consults": 5,
+      "waveRows": 5,
+      "localRows": 35,
+      "fallbacks": 0,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    }
+  ],
+  "typesafeCallsReceipted": 11,
+  "budget": {
+    "typesafe": 14,
+    "deepinfra": 4
+  }
+}

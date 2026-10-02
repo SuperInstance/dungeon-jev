@@ -6,6 +6,39 @@
 //     and the local threat-level cell (0-3) — sharp where threats near?
 // Secondary (receipted, not sealed): gap-vs-danger rho, model-vs-local agreement.
 import { readFileSync, writeFileSync } from "node:fs";
+import { genDungeon, step, DELTA, walkable, episodeOver } from "./dungeon.js";
+
+// ── replay verification: the ledger must be re-derivable (determinism law).
+// Walk each episode from genDungeon(seed) applying the receipted actions;
+// at each wave row, check whether the model's pick was LEGAL pre-collapse,
+// and assert the receipted damage matches the replay.
+function replay(rows) {
+  const byEp = new Map();
+  for (const r of rows) {
+    if (!byEp.has(r.ep)) byEp.set(r.ep, { seed: r.seed, rows: [] });
+    byEp.get(r.ep).rows.push(r);
+  }
+  let waveRows = 0, illegalPicks = 0, mismatches = [];
+  const perTick = [];
+  for (const [ep, { seed, rows: rs }] of byEp) {
+    const g = genDungeon(seed);
+    for (const r of rs) {
+      const t = r.tick;
+      if (t !== g.tick) mismatches.push({ ep, tick: t, replayAt: g.tick });
+      let legal = null;
+      if (r.class === "wave" && r.wave?.modelPick) {
+        waveRows++;
+        const [dx, dy] = DELTA[r.wave.modelPick];
+        legal = r.wave.modelPick === "wait" || walkable(g, g.player[0] + dx, g.player[1] + dy);
+        if (!legal) illegalPicks++;
+      }
+      const ev = step(g, r.action);
+      if (ev.damage !== r.damage) mismatches.push({ ep, tick: t, receipted: r.damage, replayed: ev.damage });
+      perTick.push({ ep, tick: t, modelPickLegal: legal, hpReplay: g.hp, hpReceipted: r.hpAfter });
+    }
+  }
+  return { waveRows, illegalPicks, illegalPickPct: waveRows ? 100 * illegalPicks / waveRows : null, mismatches };
+}
 
 const rows = readFileSync("receipts/waveform.jsonl", "utf8").split("\n")
   .filter(l => l.trim()).map(l => JSON.parse(l))
@@ -40,6 +73,9 @@ function spearman(xs, ys) {
 }
 
 const n = rows.length;
+const allRows = readFileSync("receipts/waveform.jsonl", "utf8").split("\n")
+  .filter(l => l.trim()).map(l => JSON.parse(l));
+const rv = replay(allRows);
 const sharp = rows.filter(r => r.wave.sharp);
 const entropies = rows.map(r => r.wave.entropy);
 const gaps = rows.map(r => r.wave.gap);
@@ -56,6 +92,7 @@ const analysis = {
   spearmanEntropyVsDanger: spearman(entropies, dangers),
   spearmanGapVsDanger: spearman(gaps, dangers),
   modelLocalAgreePct: n ? 100 * agree.length / n : null,
+  replay: rv,
   perTick: rows.map(r => ({ ep: r.ep, tick: r.tick, danger: r.cells["threat-level"], p1: r.wave.p1, p2: r.wave.p2, gap: Math.round(r.wave.gap * 1000) / 1000, entropy: Math.round(r.wave.entropy * 1000) / 1000, sharp: r.wave.sharp, modelPick: r.wave.modelPick, localPick: r.localPick })),
 };
 writeFileSync("receipts/waveform-analysis.json", JSON.stringify(analysis, null, 2) + "\n");

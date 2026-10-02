@@ -1,0 +1,166 @@
+{
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "oldWeights": {
+    "wT": 2,
+    "wL": 1,
+    "wC": 1,
+    "wH": 2,
+    "wE": 1,
+    "waitPenalty": 0.25
+  },
+  "jevWeights": {
+    "wT": 2,
+    "wL": 1.09,
+    "wH": 2.02,
+    "wC": 1.26,
+    "wE": 1.14,
+    "waitPenalty": 0.25
+  },
+  "oldRuns": [
+    {
+      "seed": 1,
+      "score": 20,
+      "loots": 2,
+      "died": true,
+      "exited": false,
+      "ticks": 38
+    },
+    {
+      "seed": 2,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    },
+    {
+      "seed": 3,
+      "score": 10,
+      "loots": 1,
+      "died": true,
+      "exited": false,
+      "ticks": 30
+    },
+    {
+      "seed": 4,
+      "score": 10,
+      "loots": 1,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    },
+    {
+      "seed": 5,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    },
+    {
+      "seed": 6,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    },
+    {
+      "seed": 7,
+      "score": 0,
+      "loots": 0,
+      "died": true,
+      "exited": false,
+      "ticks": 12
+    },
+    {
+      "seed": 8,
+      "score": 10,
+      "loots": 1,
+      "died": true,
+      "exited": false,
+      "ticks": 20
+    }
+  ],
+  "jevRuns": [
+    {
+      "seed": 1,
+      "score": 0,
+      "loots": 0,
+      "died": true,
+      "exited": false,
+      "ticks": 19
+    },
+    {
+      "seed": 2,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    },
+    {
+      "seed": 3,
+      "score": 10,
+      "loots": 1,
+      "died": true,
+      "exited": false,
+      "ticks": 23
+    },
+    {
+      "seed": 4,
+      "score": 20,
+      "loots": 2,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    },
+    {
+      "seed": 5,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    },
+    {
+      "seed": 6,
+      "score": 0,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "ticks": 40
+    },
+    {
+      "seed": 7,
+      "score": 0,
+      "loots": 0,
+      "died": true,
+      "exited": false,
+      "ticks": 12
+    },
+    {
+      "seed": 8,
+      "score": 10,
+      "loots": 1,
+      "died": true,
+      "exited": false,
+      "ticks": 16
+    }
+  ],
+  "meanOld": 6.25,
+  "meanJev": 5,
+  "seedsJevStrictlyBetter": 1,
+  "ties": 6,
+  "seedsJevLost": 1,
+  "modelCalls": 0
+}

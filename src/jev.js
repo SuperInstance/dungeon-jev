@@ -49,7 +49,8 @@ export async function jevAsk({ receiptsPath, state, questions, purpose, meta = {
   const row = {
     provider: "typesafe", model: payload.model ?? model, purpose,
     http: res.status, ok: res.ok,
-    tokensIn: payload.usage?.input ?? null, tokensOut: payload.usage?.output ?? null,
+    // JEV usage shape: usage.input_tokens / usage.output_tokens (toolkit README §"usage")
+    tokensIn: payload.usage?.input_tokens ?? null, tokensOut: payload.usage?.output_tokens ?? null,
     latencyMs: Date.now() - t0, ...meta,
   };
   if (!res.ok || typeof payload.answers !== "object" || !payload.answers) {

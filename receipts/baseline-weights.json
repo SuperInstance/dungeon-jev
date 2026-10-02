@@ -1,0 +1,106 @@
+{
+  "label": "old-weights",
+  "weights": {
+    "wT": 2,
+    "wL": 1,
+    "wC": 1,
+    "wH": 2,
+    "wE": 1,
+    "waitPenalty": 0.25
+  },
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "runs": [
+    {
+      "seed": 1,
+      "score": 20,
+      "ticks": 38,
+      "loots": 2,
+      "died": true,
+      "exited": false,
+      "hpLeft": 0,
+      "actionCount": 38
+    },
+    {
+      "seed": 2,
+      "score": 0,
+      "ticks": 40,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "hpLeft": 5,
+      "actionCount": 40
+    },
+    {
+      "seed": 3,
+      "score": 10,
+      "ticks": 30,
+      "loots": 1,
+      "died": true,
+      "exited": false,
+      "hpLeft": 0,
+      "actionCount": 30
+    },
+    {
+      "seed": 4,
+      "score": 10,
+      "ticks": 40,
+      "loots": 1,
+      "died": false,
+      "exited": false,
+      "hpLeft": 5,
+      "actionCount": 40
+    },
+    {
+      "seed": 5,
+      "score": 0,
+      "ticks": 40,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "hpLeft": 5,
+      "actionCount": 40
+    },
+    {
+      "seed": 6,
+      "score": 0,
+      "ticks": 40,
+      "loots": 0,
+      "died": false,
+      "exited": false,
+      "hpLeft": 5,
+      "actionCount": 40
+    },
+    {
+      "seed": 7,
+      "score": 0,
+      "ticks": 12,
+      "loots": 0,
+      "died": true,
+      "exited": false,
+      "hpLeft": 0,
+      "actionCount": 12
+    },
+    {
+      "seed": 8,
+      "score": 10,
+      "ticks": 20,
+      "loots": 1,
+      "died": true,
+      "exited": false,
+      "hpLeft": 0,
+      "actionCount": 20
+    }
+  ],
+  "meanScore": 6.25,
+  "maxTicks": 40,
+  "engine": "dungeon-jev@1 vendored-pending-merge"
+}

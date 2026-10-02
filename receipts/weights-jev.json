@@ -1,0 +1,12 @@
+{
+  "source": "jev tuner (typesafe, model jev-1.13.0)",
+  "weights": {
+    "wT": 2,
+    "wL": 1.09,
+    "wH": 2.02,
+    "wC": 1.26,
+    "wE": 1.14,
+    "waitPenalty": 0.25
+  },
+  "note": "typed patch to the worksheet's local rule cells — JEV fine-tunes the quilt's player-logic weights"
+}

@@ -7,11 +7,16 @@ import { readFileSync, writeFileSync } from "node:fs";
 const ab = JSON.parse(readFileSync("receipts/ab-results.json", "utf8"));
 const an = JSON.parse(readFileSync("receipts/waveform-analysis.json", "utf8"));
 
+// NOTE: preregister@1 resolves dotted metric paths INTO results.metrics
+// (lookup walks parts), so the sealed path "ab.seedsJevStrictlyBetter" must
+// be nested {ab:{seedsJevStrictlyBetter}}, not a flat dotted key.
 const metrics = {
-  "ab.seedsJevStrictlyBetter": ab.seedsJevStrictlyBetter,
-  "waveform.modelNeededPct": an.modelNeededPct,
-  "waveform.spearmanEntropyVsDanger": an.spearmanEntropyVsDanger,
-  "waveform.waveTicks": an.waveTicks,
+  "ab": { "seedsJevStrictlyBetter": ab.seedsJevStrictlyBetter },
+  "waveform": {
+    "modelNeededPct": an.modelNeededPct,
+    "spearmanEntropyVsDanger": an.spearmanEntropyVsDanger,
+    "waveTicks": an.waveTicks,
+  },
 };
 const evidence = {
   meanOld: ab.meanOld, meanJev: ab.meanJev,

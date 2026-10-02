@@ -1,0 +1,151 @@
+{
+  "eps": 0.15,
+  "waveTicks": 11,
+  "sharpTicks": 5,
+  "modelNeededPct": 45.45454545454545,
+  "meanEntropy": 0.8838780661445444,
+  "meanGap": 0.1409090909090909,
+  "spearmanEntropyVsDanger": -0.06136446160401058,
+  "spearmanGapVsDanger": 0.41539020162714857,
+  "modelLocalAgreePct": 36.36363636363637,
+  "replay": {
+    "waveRows": 11,
+    "illegalPicks": 2,
+    "illegalPickPct": 18.181818181818183,
+    "mismatches": []
+  },
+  "perTick": [
+    {
+      "ep": "W1",
+      "tick": 0,
+      "danger": 1,
+      "p1": 0.4,
+      "p2": 0.31,
+      "gap": 0.09,
+      "entropy": 0.836,
+      "sharp": false,
+      "modelPick": "right",
+      "localPick": "wait"
+    },
+    {
+      "ep": "W1",
+      "tick": 1,
+      "danger": 2,
+      "p1": 0.36,
+      "p2": 0.33,
+      "gap": 0.03,
+      "entropy": 0.852,
+      "sharp": false,
+      "modelPick": "down",
+      "localPick": "wait"
+    },
+    {
+      "ep": "W1",
+      "tick": 2,
+      "danger": 3,
+      "p1": 0.42,
+      "p2": 0.19,
+      "gap": 0.23,
+      "entropy": 0.911,
+      "sharp": true,
+      "modelPick": "down",
+      "localPick": "down"
+    },
+    {
+      "ep": "W1",
+      "tick": 3,
+      "danger": 3,
+      "p1": 0.27,
+      "p2": 0.22,
+      "gap": 0.05,
+      "entropy": 0.986,
+      "sharp": false,
+      "modelPick": "down",
+      "localPick": "down"
+    },
+    {
+      "ep": "W1",
+      "tick": 4,
+      "danger": 2,
+      "p1": 0.58,
+      "p2": 0.15,
+      "gap": 0.43,
+      "entropy": 0.763,
+      "sharp": true,
+      "modelPick": "right",
+      "localPick": "down"
+    },
+    {
+      "ep": "W1",
+      "tick": 5,
+      "danger": 3,
+      "p1": 0.48,
+      "p2": 0.2,
+      "gap": 0.28,
+      "entropy": 0.863,
+      "sharp": true,
+      "modelPick": "right",
+      "localPick": "up"
+    },
+    {
+      "ep": "W2",
+      "tick": 0,
+      "danger": 0,
+      "p1": 0.47,
+      "p2": 0.28,
+      "gap": 0.19,
+      "entropy": 0.769,
+      "sharp": true,
+      "modelPick": "right",
+      "localPick": "right"
+    },
+    {
+      "ep": "W2",
+      "tick": 1,
+      "danger": 1,
+      "p1": 0.33,
+      "p2": 0.28,
+      "gap": 0.05,
+      "entropy": 0.901,
+      "sharp": false,
+      "modelPick": "down",
+      "localPick": "down"
+    },
+    {
+      "ep": "W2",
+      "tick": 2,
+      "danger": 0,
+      "p1": 0.29000000000000004,
+      "p2": 0.26,
+      "gap": 0.03,
+      "entropy": 0.963,
+      "sharp": false,
+      "modelPick": "down",
+      "localPick": "wait"
+    },
+    {
+      "ep": "W2",
+      "tick": 3,
+      "danger": 0,
+      "p1": 0.25,
+      "p2": 0.25,
+      "gap": 0,
+      "entropy": 0.969,
+      "sharp": false,
+      "modelPick": "right",
+      "localPick": "up"
+    },
+    {
+      "ep": "W2",
+      "tick": 4,
+      "danger": 0,
+      "p1": 0.39,
+      "p2": 0.22,
+      "gap": 0.17,
+      "entropy": 0.912,
+      "sharp": true,
+      "modelPick": "right",
+      "localPick": "down"
+    }
+  ]
+}
